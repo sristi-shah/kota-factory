@@ -1,0 +1,24 @@
+<% layout('layouts/boilerplate')%>
+
+<i> <center><h1 class="text-light">All Hostels</h1></center> </i>
+<div class="mb-3">
+    <a class="btn btn-primary" href="/hostels/new">Add Hostel</a>
+</div>
+<% for (let hostel of hostels){%>
+<div class="card mb-3">
+    <div class="row">
+        <div class="col-md-4">
+            <img class="img-fluid mt-2 ml-2 mr-2 mb-2" alt="" src="<%=hostel.images[0].url%>" width="300" height="300" >
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title"><%= hostel.title %> </h5>
+                <p class="card-text">
+                    <small class="text-muted"><%= hostel.location%></small>
+                </p>
+                <a class="btn btn-primary" href="/hostels/<%=hostel._id%>">View <%=hostel.title%></a>
+            </div>
+        </div>
+    </div>
+</div>
+<% }%>
